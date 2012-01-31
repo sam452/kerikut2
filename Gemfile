@@ -16,3 +16,4 @@ gem "launchy", ">= 2.0.5", :group => :test
 gem "devise", ">= 2.0.0"
 gem "bootstrap-sass"
 gem "rails-footnotes", ">= 3.7", :group => :development
+gem "pg", ">=0.12.2"

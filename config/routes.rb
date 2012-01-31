@@ -1,10 +1,6 @@
 Keriakut::Application.routes.draw do
   
 
-  get "prices/new"
-
-  get "prices/index"
-
   root :to => "home#index"
 
   devise_for :users

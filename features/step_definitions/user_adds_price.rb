@@ -68,8 +68,6 @@ When /^I put in today's date in Date$/ do
 end
 
 When /^I press "([^"]*)"$/ do |text|
-  click(text)
+  click_on('Submit')
 end
-
-
 

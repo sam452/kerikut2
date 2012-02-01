@@ -29,5 +29,5 @@ Scenario: Adding corn price
 	
 	And I put in today's date in Date
 	
-	When I press "submit"
+	When I press "Submit"
 	Then it should create a new price in the database

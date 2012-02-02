@@ -11,7 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131170346) do
+ActiveRecord::Schema.define(:version => 20120202154750) do
+
+  create_table "commodities", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prices", :force => true do |t|
+    t.date     "date"
+    t.string   "price_type"
+    t.string   "commodity"
+    t.string   "quality"
+    t.string   "farm_gate_unit"
+    t.decimal  "farm_gate_high"
+    t.decimal  "farm_gate_low"
+    t.string   "delivered_unit"
+    t.decimal  "delivered_high"
+    t.decimal  "delivered_low"
+    t.string   "wholesale_unit"
+    t.decimal  "wholesale_high"
+    t.decimal  "wholesale_low"
+    t.string   "retail_unit"
+    t.decimal  "retail_high"
+    t.decimal  "retail_low"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

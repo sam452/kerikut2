@@ -72,7 +72,7 @@ When /^I press "([^"]*)"$/ do |text|
 end
 
 Then /^it should create a new price in the database$/ do
-  commodity = Commodity.find_by_name("Corn")
-Price.where(quality: "good", commodity: corn, date: Date.today, price_type: "government", farm_gate_unit: "crate", farm_gate_high: 12, farm_gate_low: 10, delivered_unit: "bushel", delivered_high: 9, delivered_low: 7, wholesale_unit: "ton", wholesale_high: 14, wholesale_low: 13, retail_unit: "gallon", retail_high: 19, retail_low: 17).size.should == 1
+  commodity = Commodity.find_by_name("corn")
+Price.where(quality: "good", commodity: "corn", date: Date.today, price_type: "government", farm_gate_unit: "crate", farm_gate_high: 12, farm_gate_low: 10, delivered_unit: "bushel", delivered_high: 9, delivered_low: 7, wholesale_unit: "ton", wholesale_high: 14, wholesale_low: 13, retail_unit: "gallon", retail_high: 19, retail_low: 17).size.should == 1
 end
 

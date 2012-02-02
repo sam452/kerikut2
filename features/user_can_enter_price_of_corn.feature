@@ -13,7 +13,7 @@ Scenario: Adding corn price
 	When I select "corn" in Commodity
 	
 	And I select "good" in Quality
-	And I select "government" in Type	
+	And I select "government" in Price Type	
 	
 	And I fill in "12" in Farm Gate High
 	And I fill in "10" in Farm Gate Low

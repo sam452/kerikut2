@@ -5,18 +5,22 @@ end
 
 Then /^I should see "([^"]*)" in Retail Unit$/ do |text|
   page.should have_content(text)
+  fill_in('Retail unit', :with => text)
 end
 
 Then /^I should see "([^"]*)" in Farm Gate Unit$/ do |text|
   page.should have_content(text)
+  fill_in('Farm gate unit', :with => text)
 end
 
 Then /^I should see "([^"]*)" in Delivered Unit$/ do |text|
   page.should have_content(text)
+  fill_in('Delivered unit', :with => text)
 end
 
 Then /^I should see "([^"]*)" in Wholesale Unit$/ do |text|
   page.should have_content(text)
+  fill_in('Wholesale unit', :with => text)
 end
 
 When /^I select "([^"]*)" in Commodity$/ do |text|
@@ -24,11 +28,13 @@ When /^I select "([^"]*)" in Commodity$/ do |text|
 end
 
 When /^I select "([^"]*)" in Quality$/ do |text|
-  select(text, :from => 'Quality')
+  #select(text, :from => 'Quality')
+  fill_in('Quality', :with => text)
 end
 
 When /^I select "([^"]*)" in Price Type$/ do |text|
   select(text, :from => 'Price Type')
+  fill_in('Price type', :with => text)
 end
 
 When /^I fill in "([^"]*)" in Farm Gate High$/ do |text|
@@ -64,7 +70,7 @@ When /^I fill in "([^"]*)" in Retail Low$/ do |text|
 end
 
 When /^I put in today's date in Date$/ do
-  fill_in('Date', :with => '1/01/12')
+  fill_in('Date', :with => Date.today)
 end
 
 When /^I press "([^"]*)"$/ do |text|
@@ -73,6 +79,22 @@ end
 
 Then /^it should create a new price in the database$/ do
   commodity = Commodity.find_by_name("corn")
-Price.where(quality: "good", commodity: "corn", date: Date.today, price_type: "government", farm_gate_unit: "crate", farm_gate_high: 12, farm_gate_low: 10, delivered_unit: "bushel", delivered_high: 9, delivered_low: 7, wholesale_unit: "ton", wholesale_high: 14, wholesale_low: 13, retail_unit: "gallon", retail_high: 19, retail_low: 17).size.should == 1
+price = Price.last
+price.quality.should=="good"
+price.date.should==Date.today
+price.price_type.should=="government"
+price.farm_gate_unit.should=="crate"
+price.farm_gate_high.to_i.should==12
+price.farm_gate_low.to_i.should==10
+price.delivered_unit.should=="bushel"
+price.delivered_high.to_i.should==9
+price.delivered_low.to_i.should==7
+price.wholesale_unit.should=="ton"
+price.wholesale_high.to_i.should==14
+price.wholesale_low.to_i.should==13
+price.retail_unit.should=="gallon"
+price.retail_high.to_i.should==19
+price.retail_low.to_i.should==17
+price.commodity.should==commodity
 end
 

@@ -1,12 +1,7 @@
 <%= form_for (@price)  do |f| %>
   <div class="field">
-    <%= f.label :commodity_id %><br />
-    <%= f.text_field :commodity_id %>
-    <%= select_tag(:commodity, '<option value=1>Corn</option>') %>
-    <select name="Commodity">
-  <option value="corn">corn</option>
-</select>
-
+    <%= f.label :commodity_id, "Commodity" %><br />
+    <%= f.select(:commodity_id, Commodity.all.collect{|c| [c.name, c.id]}) %>
   </div>
   <div class="field">
     <%= f.label :quality %><br />

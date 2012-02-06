@@ -7,9 +7,7 @@ class PricesController < ApplicationController
   end
   
   def create 
-    
     @price = Price.new(params[:price])
-    
 
     respond_to do |format|
       if @price.save

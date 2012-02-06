@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120203174650) do
+ActiveRecord::Schema.define(:version => 20120206153001) do
 
   create_table "commodities", :force => true do |t|
     t.string   "name"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20120203174650) do
   create_table "prices", :force => true do |t|
     t.date     "date"
     t.string   "price_type"
-    t.string   "commodity"
     t.string   "quality"
     t.string   "farm_gate_unit"
     t.decimal  "farm_gate_high"

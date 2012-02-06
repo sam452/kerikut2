@@ -23,9 +23,8 @@ Then /^I should see "([^"]*)" in Wholesale Unit$/ do |text|
   fill_in('Wholesale unit', :with => text)
 end
 
-When /^I select "([^"]*)" in Commodity$/ do |text|
-  select(text, :from => 'Commodity')
-  fill_in('Commodity', :with => text)
+When /^I select "([^"]*)" from "([^"]*)"$/ do |value, field|
+  select(value, :from => field)
 end
 
 When /^I select "([^"]*)" in Quality$/ do |text|
@@ -79,23 +78,23 @@ When /^I press "([^"]*)"$/ do |text|
 end
 
 Then /^it should create a new price in the database$/ do
-  commodity = Commodity.find_by_name("corn")
-price = Price.last
-price.quality.should=="good"
-price.date.should==Date.today
-price.price_type.should=="government"
-price.farm_gate_unit.should=="crate"
-price.farm_gate_high.to_i.should==12
-price.farm_gate_low.to_i.should==10
-price.delivered_unit.should=="bushel"
-price.delivered_high.to_i.should==9
-price.delivered_low.to_i.should==7
-price.wholesale_unit.should=="ton"
-price.wholesale_high.to_i.should==14
-price.wholesale_low.to_i.should==13
-price.retail_unit.should=="gallon"
-price.retail_high.to_i.should==19
-price.retail_low.to_i.should==17
-price.commodity.should==commodity
+  commodity = Commodity.find_by_name("Corn")
+  price = Price.last
+  price.quality.should=="good"
+  price.date.should==Date.today
+  price.price_type.should=="government"
+  price.farm_gate_unit.should=="crate"
+  price.farm_gate_high.to_i.should==12
+  price.farm_gate_low.to_i.should==10
+  price.delivered_unit.should=="bushel"
+  price.delivered_high.to_i.should==9
+  price.delivered_low.to_i.should==7
+  price.wholesale_unit.should=="ton"
+  price.wholesale_high.to_i.should==14
+  price.wholesale_low.to_i.should==13
+  price.retail_unit.should=="gallon"
+  price.retail_high.to_i.should==19
+  price.retail_low.to_i.should==17
+  price.commodity.should == commodity
 end
 

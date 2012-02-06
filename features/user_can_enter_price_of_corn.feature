@@ -3,14 +3,14 @@ Feature: I want to be able to enter in the market price of corn so they can be s
 
 
 Scenario: Adding corn price
-
+  Given a commodity "Corn" exists
 	When I go to the new Price page
 	Then I should see "gallon" in Retail Unit
 	And I should see "crate" in Farm Gate Unit
 	And I should see "bushel" in Delivered Unit
 	And I should see "ton" in Wholesale Unit
 	
-	When I select "corn" in Commodity
+	When I select "Corn" from "Commodity"
 	
 	And I select "good" in Quality
 	And I select "government" in Price Type	

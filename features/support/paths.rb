@@ -17,7 +17,7 @@ module NavigationHelpers
     when /the sign in page/
       '/users/sign_in'
       
-      when /the  new Price page/
+	when /the  new Price page/
       '/prices/new'
 
 

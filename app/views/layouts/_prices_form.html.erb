@@ -1,11 +1,12 @@
 <%= form_for (@price)  do |f| %>
   <div class="field">
-    <%= f.label :commodity %><br />
-    <%= f.text_field :commodity %>
+    <%= f.label :commodity_id %><br />
+    <%= f.text_field :commodity_id %>
     <%= select_tag(:commodity, '<option value=1>Corn</option>') %>
     <select name="Commodity">
   <option value="corn">corn</option>
 </select>
+
   </div>
   <div class="field">
     <%= f.label :quality %><br />
@@ -97,6 +98,7 @@
     <%= f.text_field :date %>
   </div>
  <div class="actions">
+ 
     <%= f.submit  %>
   </div>
 <% end %>

@@ -25,6 +25,7 @@ end
 
 When /^I select "([^"]*)" in Commodity$/ do |text|
   select(text, :from => 'Commodity')
+  fill_in('Commodity', :with => text)
 end
 
 When /^I select "([^"]*)" in Quality$/ do |text|

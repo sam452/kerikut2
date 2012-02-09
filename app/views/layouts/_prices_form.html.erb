@@ -1,32 +1,13 @@
 
 
 <%= form_for (@price), :url => prices_path  do |f| %>
- <!-- 
- <div class="field">
-    <%= f.label :commodity_id, "Commodity" %><br />
-    <%= f.select(:commodity_id, Commodity.all.collect{|c| [c.name, c.id]}) %>
-  </div>
- -->
-  
-  
   <div class="field">
     <%= f.label :quality %><br />
     <%= f.text_field :quality %>
-<!-- 
-  <select name="Quality">
-  <option value="good">good</option>
-</select>
- -->
   </div>
   <div class="field">
     <%= f.label :price_type %><br />
     <%= f.text_field :price_type %>
-<!-- 
-    <select name="Price Type">
-  <option value="government">government</option>
-</select>
- -->
-  </div>
   </div>
   <div class="field">
     <%= f.label :farm_gate_high %><br />
@@ -52,19 +33,19 @@
     <%= f.label :wholesale_low %><br />
     <%= f.text_field :wholesale_low %>
   </div>
-    <div class="field">
+  <div class="field">
     <%= f.label :retail_high %><br />
     <%= f.text_field :retail_high %>
   </div>
- <div class="field">
+  <div class="field">
     <%= f.label :retail_low %><br />
     <%= f.text_field :retail_low %>
-      <div class="field">
+  </div>
+  <div class="field">
     <%= f.label :date %><br />
     <%= f.text_field :date %>
   </div>
- <div class="actions">
- 
-    <%= f.submit  %>
+  <div class="actions">
+    <%= f.submit "Submit" %>
   </div>
 <% end %>

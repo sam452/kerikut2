@@ -18,19 +18,19 @@ Scenario: Adding corn price
 	Then I should see "bushel"
 	
 	And I select "good" in Quality
-	And I select "government" in Price Type	
+	And I select "government" in Price Type
 	
-	And I fill in "12" in Farm Gate High
-	And I fill in "10" in Farm Gate Low
+	And I fill in "12" in Farm Gate High (crate)
+	And I fill in "10" in Farm Gate Low (crate)
 
-	And I fill in "9" in Delivered High
-	And I fill in "7" in Delivered Low
+	And I fill in "9" in Delivered High (bushel)
+	And I fill in "7" in Delivered Low (bushel)
 
-	And I fill in "14" in Wholesale High
-	And I fill in "13" in Wholesale Low
+	And I fill in "14" in Wholesale High (ton)
+	And I fill in "13" in Wholesale Low (ton)
 
-	And I fill in "19" in Retail High
-	And I fill in "17" in Retail Low
+	And I fill in "19" in Retail High (gallon)
+	And I fill in "17" in Retail Low (gallon)
 	
 	And I put in today's date in Date
 	

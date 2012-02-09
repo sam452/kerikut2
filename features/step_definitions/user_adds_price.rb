@@ -18,7 +18,6 @@ end
 
 
 Then /^I should go to the new price page$/ do
-  save_and_open_page
   visit('/prices/new')
 end
 
@@ -36,35 +35,36 @@ When /^I select "([^"]*)" in Price Type$/ do |text|
   fill_in('Price type', :with => text)
 end
 
-When /^I fill in "([^"]*)" in Farm Gate High$/ do |text|
+
+When /^I fill in "([^"]*)" in Farm Gate High \(crate\)$/ do |text|
   fill_in('Farm gate high', :with => text)
 end
 
-When /^I fill in "([^"]*)" in Farm Gate Low$/ do |text|
+When /^I fill in "([^"]*)" in Farm Gate Low \(crate\)$/ do |text|
   fill_in('Farm gate low', :with => text)
 end
 
-When /^I fill in "([^"]*)" in Delivered High$/ do |text|
+When /^I fill in "([^"]*)" in Delivered High \(bushel\)$/ do |text|
   fill_in('Delivered high', :with => text)
 end
 
-When /^I fill in "([^"]*)" in Delivered Low$/ do |text|
+When /^I fill in "([^"]*)" in Delivered Low \(bushel\)$/ do |text|
   fill_in('Delivered low', :with => text)
 end
 
-When /^I fill in "([^"]*)" in Wholesale High$/ do |text|
+When /^I fill in "([^"]*)" in Wholesale High \(ton\)$/ do |text|
   fill_in('Wholesale high', :with => text)
 end
 
-When /^I fill in "([^"]*)" in Wholesale Low$/ do |text|
+When /^I fill in "([^"]*)" in Wholesale Low \(ton\)$/ do |text|
   fill_in('Wholesale low', :with => text)
 end
 
-When /^I fill in "([^"]*)" in Retail High$/ do |text|
+When /^I fill in "([^"]*)" in Retail High \(gallon\)$/ do |text|
   fill_in('Retail high', :with => text)
 end
 
-When /^I fill in "([^"]*)" in Retail Low$/ do |text|
+When /^I fill in "([^"]*)" in Retail Low \(gallon\)$/ do |text|
   fill_in('Retail low', :with => text)
 end
 
@@ -82,16 +82,12 @@ Then /^it should create a new price in the database$/ do
   price.quality.should=="good"
   price.date.should==Date.today
   price.price_type.should=="government"
-  #price.farm_gate_unit.should=="crate"
   price.farm_gate_high.to_i.should==12
   price.farm_gate_low.to_i.should==10
-  #price.delivered_unit.should=="bushel"
   price.delivered_high.to_i.should==9
   price.delivered_low.to_i.should==7
-  #price.wholesale_unit.should=="ton"
   price.wholesale_high.to_i.should==14
   price.wholesale_low.to_i.should==13
-  #price.retail_unit.should=="gallon"
   price.retail_high.to_i.should==19
   price.retail_low.to_i.should==17
   price.commodity.should == commodity

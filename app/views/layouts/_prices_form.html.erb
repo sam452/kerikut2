@@ -1,8 +1,14 @@
-<%= form_for (@price)  do |f| %>
-  <div class="field">
+
+
+<%= form_for (@price), :url => prices_path  do |f| %>
+ <!-- 
+ <div class="field">
     <%= f.label :commodity_id, "Commodity" %><br />
     <%= f.select(:commodity_id, Commodity.all.collect{|c| [c.name, c.id]}) %>
   </div>
+ -->
+  
+  
   <div class="field">
     <%= f.label :quality %><br />
     <%= f.text_field :quality %>

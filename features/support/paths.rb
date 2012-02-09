@@ -17,8 +17,11 @@ module NavigationHelpers
     when /the sign in page/
       '/users/sign_in'
       
-	when /the  new Price page/
-      '/prices/new'
+	when /the new price commodities page/
+      '/prices/new/:commodity'
+
+	when /the new price page/
+      'prices/new/'
 
 
     # Add more mappings here.

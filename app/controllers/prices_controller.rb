@@ -1,6 +1,7 @@
 class PricesController < ApplicationController
   def new
     @price = Price.new
+    #@commodity = Commodity(params[:id])
   end
 
   def index

@@ -1,30 +1,29 @@
-When /^I go to the new Price page$/ do
-  #visit new_prices_path
+# sguggested Given /^a commodity "([^"]*)" exists with wholesale_units: "([^"]*)", retail_units: "([^"]*)", farm_gate_units: "([^"]*)", delivered_units: "([^"]*)"$/ do |arg1, arg2, arg3, arg4, arg5|
+#Given /^a commodity "([^"]*)" exists with wholesale_unit: "([^"]*)", retail_unit: "([^"]*)", farm_gate_unit: "([^"]*)", delivered_unit: "([^"]*)"$/ do |text, wholesale_unit, retail_unit, farm_gate_unit, delivered_unit|
+Given /^a commodity "([^"]*)" exists with wholesale_units: "([^"]*)", retail_units: "([^"]*)", farm_gate_units: "([^"]*)", delivered_units: "([^"]*)"$/ do |text, wholesale_unit, retail_unit, farm_gate_unit, delivered_unit|
+  #Factory(:commodity, :name => text, :wholesale_unit => wholesale_unit, :retail_unit => retail_unit)
+  Commodity.create!(:name => text, :wholesale_unit => wholesale_unit, :retail_unit => retail_unit, :farm_gate_unit => farm_gate_unit, :delivered_unit => delivered_unit)
+end
+
+
+
+When /^I go to the new price commodities page$/ do
+  visit('/prices/new/:commodity')
+end
+
+When /^I follow "([^"]*)"$/ do |text|
+  
+  click_link(text)
+end
+
+
+Then /^I should go to the new price page$/ do
+  save_and_open_page
   visit('/prices/new')
 end
 
-Then /^I should see "([^"]*)" in Retail Unit$/ do |text|
-  # page.should have_content(text)
-  fill_in('Retail unit', :with => text)
-end
-
-Then /^I should see "([^"]*)" in Farm Gate Unit$/ do |text|
-  # page.should have_content(text)
-  fill_in('Farm gate unit', :with => text)
-end
-
-Then /^I should see "([^"]*)" in Delivered Unit$/ do |text|
-  # page.should have_content(text)
-  fill_in('Delivered unit', :with => text)
-end
-
-Then /^I should see "([^"]*)" in Wholesale Unit$/ do |text|
-  # page.should have_content(text)
-  fill_in('Wholesale unit', :with => text)
-end
-
-When /^I select "([^"]*)" from "([^"]*)"$/ do |value, field|
-  select(value, :from => field)
+Then /^I should see "([^"]*)"$/ do |text|
+  page.should have_content(text)
 end
 
 When /^I select "([^"]*)" in Quality$/ do |text|
@@ -83,16 +82,16 @@ Then /^it should create a new price in the database$/ do
   price.quality.should=="good"
   price.date.should==Date.today
   price.price_type.should=="government"
-  price.farm_gate_unit.should=="crate"
+  #price.farm_gate_unit.should=="crate"
   price.farm_gate_high.to_i.should==12
   price.farm_gate_low.to_i.should==10
-  price.delivered_unit.should=="bushel"
+  #price.delivered_unit.should=="bushel"
   price.delivered_high.to_i.should==9
   price.delivered_low.to_i.should==7
-  price.wholesale_unit.should=="ton"
+  #price.wholesale_unit.should=="ton"
   price.wholesale_high.to_i.should==14
   price.wholesale_low.to_i.should==13
-  price.retail_unit.should=="gallon"
+  #price.retail_unit.should=="gallon"
   price.retail_high.to_i.should==19
   price.retail_low.to_i.should==17
   price.commodity.should == commodity

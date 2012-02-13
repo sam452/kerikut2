@@ -8,7 +8,7 @@ Keriakut::Application.routes.draw do
   resources :prices
   resource :create, :controller => :create
   #match 'prices/new', :to => 'prices#new'
-  get '/prices/new/:id', :to => 'price_commodities#new'
+  get '/prices/new/:id', :to => 'price_commodities#new', :as => 'price_commodity'
 
 
   # The priority is based upon order of creation:

@@ -1,6 +1,51 @@
-<h1>New Price</h1>
+<h1>Enter New Price</h1>
 
-<p>Choose commodity</p>
-<% Commodity.all.each do |commodity|  %>
-  <%= link_to commodity.name, new_price_path(commodity) %>
+<%= form_for (@price), :url => prices_path  do |f| %>
+  <div class="field">
+    <%= f.label :quality %><br />
+    <%= f.text_field :quality %>
+  </div>
+  <div class="field">
+    <%= f.label :price_type %><br />
+    <%= f.text_field :price_type %>
+  </div>
+  <div class="field">
+    <%= f.label :farm_gate_high %><br />
+    <%= f.text_field :farm_gate_high %>
+  </div>
+  <div class="field">
+    <%= f.label :farm_gate_low %><br />
+    <%= f.text_field :farm_gate_low %>
+  </div>
+  <div class="field">
+    <%= f.label :delivered_high %><br />
+    <%= f.text_field :delivered_high %>
+  </div>
+  <div class="field">
+    <%= f.label :delivered_low %><br />
+    <%= f.text_field :delivered_low %>
+  </div>
+  <div class="field">
+    <%= f.label :wholesale_high %><br />
+    <%= f.text_field :wholesale_high %>
+  </div>
+  <div class="field">
+    <%= f.label :wholesale_low %><br />
+    <%= f.text_field :wholesale_low %>
+  </div>
+  <div class="field">
+    <%= f.label :retail_high %><br />
+    <%= f.text_field :retail_high %>
+  </div>
+  <div class="field">
+    <%= f.label :retail_low %><br />
+    <%= f.text_field :retail_low %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
 <% end %>

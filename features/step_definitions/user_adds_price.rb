@@ -8,7 +8,7 @@ end
 
 
 When /^I go to the new price commodities page$/ do
-  visit('/prices/new/:commodity')
+  visit('/prices/new')
 end
 
 When /^I follow "([^"]*)"$/ do |text|

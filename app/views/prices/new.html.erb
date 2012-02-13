@@ -1,9 +1,8 @@
-<h1>Prices#new</h1>
-
-<p>ton<br>
-gallon
-crate
-bushel</p>
-
-<%= render 'layouts/prices_form' %>
+<h1>Enter New Price</h1>
+<h3>Select a commodity</h3>
+<ul>
+  <% Commodity.all.each do |commodity| %>
+    <li><%= link_to commodity.name, price_commodity_path(commodity) %></li>
+  <% end %>
+</ul>
 

@@ -73,7 +73,7 @@ When /^I put in today's date in Date$/ do
 end
 
 When /^I press "([^"]*)"$/ do |text|
-  click_on('Create Price')
+  click_button('Create Price')
 end
 
 Then /^it should create a new price in the database$/ do

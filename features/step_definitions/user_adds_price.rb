@@ -21,13 +21,10 @@ Then /^I should go to the new price page$/ do
   visit('/prices/new')
 end
 
-Then /^I should see "([^"]*)"$/ do |text|
-  page.should have_content(text)
-end
 
-When /^I select "([^"]*)" in Quality$/ do |text|
-  #select(text, :from => 'Quality')
-  fill_in('Quality', :with => text)
+
+When /^I fill in "([^"]*)" with "([^"]*)"$/ do |field, text|
+  fill_in(field, :with => text)
 end
 
 When /^I select "([^"]*)" in Price Type$/ do |text|

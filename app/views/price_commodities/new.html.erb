@@ -1,8 +1,9 @@
-<h1>Enter New Price</h1>
+<h1>Enter New Price for <%= @commodity.name %></h1>
 
 <%= form_for (@price), :url => prices_path  do |f| %>
+    <%= f.hidden_field :commodity_id, :value =>@commodity.id %>
   <div class="field">
-    <%= f.label :quality %><br />
+    <%= f.label :Quality %><br />
     <%= f.text_field :quality %>
   </div>
   <div class="field">
@@ -10,35 +11,35 @@
     <%= f.text_field :price_type %>
   </div>
   <div class="field">
-    <%= f.label :farm_gate_high %><br />
+    <%= f.label :farm_gate_high %>(<%= @commodity.farm_gate_unit %>)<br />
     <%= f.text_field :farm_gate_high %>
   </div>
   <div class="field">
-    <%= f.label :farm_gate_low %><br />
+    <%= f.label :farm_gate_low %>(<%= @commodity.farm_gate_unit %>)<br />
     <%= f.text_field :farm_gate_low %>
   </div>
   <div class="field">
-    <%= f.label :delivered_high %><br />
+    <%= f.label :delivered_high %>(<%= @commodity.delivered_unit %>)<br />
     <%= f.text_field :delivered_high %>
   </div>
   <div class="field">
-    <%= f.label :delivered_low %><br />
+    <%= f.label :delivered_low %>(<%= @commodity.delivered_unit %>)<br />
     <%= f.text_field :delivered_low %>
   </div>
   <div class="field">
-    <%= f.label :wholesale_high %><br />
+    <%= f.label :wholesale_high %> (<%= @commodity.wholesale_unit %>)<br />
     <%= f.text_field :wholesale_high %>
   </div>
   <div class="field">
-    <%= f.label :wholesale_low %><br />
+    <%= f.label :wholesale_low %> (<%= @commodity.wholesale_unit %>)<br />
     <%= f.text_field :wholesale_low %>
   </div>
   <div class="field">
-    <%= f.label :retail_high %><br />
+    <%= f.label :retail_high %>(<%= @commodity.retail_unit %>)<br />
     <%= f.text_field :retail_high %>
   </div>
   <div class="field">
-    <%= f.label :retail_low %><br />
+    <%= f.label :retail_low %>(<%= @commodity.retail_unit %>)<br />
     <%= f.text_field :retail_low %>
   </div>
   <div class="field">
@@ -46,6 +47,7 @@
     <%= f.text_field :date %>
   </div>
   <div class="actions">
-    <%= f.submit "Submit" %>
+     
+     <%= f.submit "Submit" %>
   </div>
 <% end %>

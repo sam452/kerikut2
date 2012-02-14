@@ -12,12 +12,8 @@ Scenario: Adding corn price
 	
 	Then I should go to the new price page
 	
-	Then I should see "ton"
-	Then I should see "gallon"
-	Then I should see "crate"
-	Then I should see "bushel"
 	
-	And I select "good" in Quality
+	And I fill in "price_Quality" with "good"
 	And I select "government" in Price Type
 	
 	And I fill in "12" in Farm Gate High (crate)

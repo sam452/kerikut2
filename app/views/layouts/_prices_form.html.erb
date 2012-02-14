@@ -1,6 +1,6 @@
 
 
-<%= form_for (@price), :url => prices_path  do |f| %>
+<%= form_for [@commodity, @price], :url => prices_path  do |f| %>
   <div class="field">
     <%= f.label :quality %><br />
     <%= f.text_field :quality %>

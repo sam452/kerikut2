@@ -9,11 +9,8 @@ Scenario: Adding corn price
 	When I go to the new price commodities page
 	
 	And I follow "Corn"
-	
-	Then I should go to the new price page
-	
-	
-	And I fill in "price_Quality" with "good"
+
+	And I fill in "price_quality" with "good"
 	And I select "government" in Price Type
 	
 	And I fill in "12" in Farm Gate High (crate)

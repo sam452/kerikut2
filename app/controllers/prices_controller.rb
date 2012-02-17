@@ -7,6 +7,14 @@ class PricesController < ApplicationController
   def index
   end
   
+  def show
+    #@price = Price.find(params[:id])
+  end
+  
+  def search
+    
+  end
+  
   def create 
     @price = Price.new(params[:price])
 

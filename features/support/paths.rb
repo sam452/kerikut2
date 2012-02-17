@@ -23,6 +23,12 @@ module NavigationHelpers
 	when /the new price page/
       'prices/new/'
 
+	when /the new volume commodities page/
+      'volumes/new/'
+	
+	when /the price commodities page/
+      'price_commodities/show/'
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

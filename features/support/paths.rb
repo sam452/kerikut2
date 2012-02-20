@@ -9,7 +9,7 @@ module NavigationHelpers
     case page_name
 
     when /the home\s?page/
-      '/'
+      '/prices/index'
 
     when /the sign up page/
       '/users/sign_up'
@@ -28,6 +28,9 @@ module NavigationHelpers
 	
 	when /the price commodities page/
       'price_commodities/show/'
+      
+	when /the price page/
+      '/price_commodities/show/'
 
 
     # Add more mappings here.
@@ -50,3 +53,4 @@ module NavigationHelpers
 end
 
 World(NavigationHelpers)
+

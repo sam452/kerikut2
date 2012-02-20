@@ -1,2 +1,9 @@
-<h1>Prices#index</h1>
-<p>Find me in app/views/prices/index.html.erb</p>
+prices#index
+<h3>Select a commodity</h3>
+<ul>
+  <% Commodity.all.each do |commodity| %>
+   <li><%= link_to commodity.name, price_commodities_path %></li>
+  <% end %>
+</ul>
+
+

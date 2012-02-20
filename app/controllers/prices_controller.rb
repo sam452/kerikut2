@@ -5,15 +5,13 @@ class PricesController < ApplicationController
   end
 
   def index
+    @commodity = Commodity.find(:all)
   end
   
   def show
     #@price = Price.find(params[:id])
   end
   
-  def search
-    
-  end
   
   def create 
     @price = Price.new(params[:price])

@@ -1,21 +1,16 @@
 Keriakut::Application.routes.draw do
   
 
-  get "volumes/new"
-
-  get "volumes/index"
-
-  root :to => "home#index"
+  #root :to => "home#index"
+  # root :to => "prices#index"
 
   devise_for :users
   resources :users, :only => :show
   resources :prices
   resources :price_commodities
-  resources :volumes
   resource :create, :controller => :create
-  #match 'prices/new', :to => 'prices#new'
   get '/prices/new/:id', :to => 'price_commodities#new', :as => 'price_commodity'
-  get '/prices/show/:id', :to => 'price_commodities#show', :as => 'price_commodities_show'
+  get '/prices/show/:commodity_id', :to => 'price_commodities#show', :as => 'price_commodities_show'
 
 
   # The priority is based upon order of creation:

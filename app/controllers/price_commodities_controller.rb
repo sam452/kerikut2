@@ -6,7 +6,7 @@ class PriceCommoditiesController < ApplicationController
   end
   
   def show
-    @price = Price.find_by_name(params[:commodity_id])
+    @price = Price.find_by_name(params[:name])
     @commodity = Commodity.find(params[:commodity_id])
  end
   

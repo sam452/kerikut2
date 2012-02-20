@@ -2,7 +2,7 @@ prices#index
 <h3>Select a commodity</h3>
 <ul>
   <% Commodity.all.each do |commodity| %>
-   <li><%= link_to commodity.name, price_commodities_path %></li>
+   <li><%= link_to commodity.name, price_path %></li>
   <% end %>
 </ul>
 

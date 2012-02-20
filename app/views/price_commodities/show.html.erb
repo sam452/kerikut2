@@ -1,0 +1,9 @@
+price_commodities#show
+
+
+<h3>Prices for <%= @commodity.name %></h3>
+<ul>
+  <% Price.each do |price| %>
+   <li>(<%= price.attribute.to_s %>) <%= price.quality %></li>
+  <% end %>
+</ul>

@@ -2,7 +2,7 @@ Keriakut::Application.routes.draw do
   
 
   #root :to => "home#index"
-  # root :to => "prices#index"
+  root :to => "prices#index"
 
   devise_for :users
   resources :users, :only => :show

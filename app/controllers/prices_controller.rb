@@ -5,7 +5,7 @@ class PricesController < ApplicationController
   end
 
   def index
-    @commodity = Commodity.find(:all)
+    #@commodity = Commodity.find(:all)
   end
   
   def show

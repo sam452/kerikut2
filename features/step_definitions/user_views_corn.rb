@@ -5,10 +5,9 @@ Given /^a price for corn has already been entered$/ do
  	#Factory(:price)
 end
 
-	When /^I go to the home\s?page$/ do
-	  visit('prices/index')
- 	   save_and_open_page
-	end
+When /^I go to the home\s?page$/ do
+ visit(prices_path)
+end
 
 #  	Then /^I should see "([^"]*)"$/ do |text|
 #   	  page.has_content?(text)

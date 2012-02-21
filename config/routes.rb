@@ -1,13 +1,13 @@
 Keriakut::Application.routes.draw do
   
 
+  get "commodities/show"
+
   #root :to => "home#index"
   root :to => "prices#index"
 
-  devise_for :users
-  resources :users, :only => :show
   resources :prices
-  resources :price_commodities
+  resources :commodities, :only => :show
   resource :create, :controller => :create
   get '/prices/new/:id', :to => 'price_commodities#new', :as => 'price_commodity'
  # get '/prices/show/:commodity_id', :to => 'price_commodities#show', :as => 'price_commodities_show'

@@ -6,7 +6,7 @@ Given /^a price for corn has already been entered$/ do
 end
 
 When /^I go to the home\s?page$/ do
- visit(prices_path)
+ visit("/")
 end
 
 #  	Then /^I should see "([^"]*)"$/ do |text|

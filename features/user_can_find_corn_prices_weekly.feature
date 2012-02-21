@@ -11,7 +11,7 @@ Scenario: Viewing corn prices
 	Then I should see "Corn"
 	And I click on "Corn"
 	
-	Then I should go to the price page
+	Then I should go to the corn price page
 	  
 	And I should see "good" in "price_quality"
 	And I should see "government" in Price Type

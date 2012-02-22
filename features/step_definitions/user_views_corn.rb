@@ -9,20 +9,8 @@ When /^I go to the home\s?page$/ do
  visit("/")
 end
 
-#  	Then /^I should see "([^"]*)"$/ do |text|
-#   	  page.has_content?(text)
-#   	   save_and_open_page
-#   	end
-#   	
-#   	Then /^I click on "([^"]*)"$/ do |text|
-#   	  click_link(text)
-#   	 end
-#   	 
-#   	 Then /^I should go to the price page$/ do
-#   	   #visit(price_commodities_show_path)
-#   	   visit(price_path)
-#   	end
-#  
-#  	Then /^I should see "([^"]*)" in "([^"]*)"$/ do |text, field|
-#   	  pending # express the regexp above with the code you wish you had
-#  	end
+
+Then /^I should not see "([^"]*)" in Retail low \(gallon\)$/ do | |
+save_and_open_page
+  pending # express the regexp above with the code you wish you had
+end

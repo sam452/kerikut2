@@ -24,5 +24,4 @@ Scenario: Viewing corn prices
 	And I should see "13" in Wholesale low (ton)
 	And I should see "19" in Retail high (gallon)
 	And I should see "17" in Retail low (gallon)
-	And I should not see "14" in Retail low (gallon)
 

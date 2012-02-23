@@ -8,6 +8,7 @@ FactoryGirl.define do
     f.retail_unit 'gallon'
     f.farm_gate_unit 'crate'
     f.delivered_unit 'bushel'
+    f.receipt_unit 'dollar'
   end
   
   factory :price do |f|

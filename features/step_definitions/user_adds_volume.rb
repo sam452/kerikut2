@@ -8,6 +8,10 @@ When /^I go to the new volume commodities page$/ do
   visit('/volumes/new')
 end
 
+When /^I follow "([^"]*)"$/ do |text|
+  click_link(text)
+end
+
 When /^I fill in  "([^"]*)" in "([^"]*)"$/ do |text, field|
   fill_in(field, :with => text)
 end

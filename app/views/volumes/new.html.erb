@@ -1,0 +1,8 @@
+<h1>Volumes#new</h1>
+<h1>Enter New Volume</h1>
+<h3>Select a commodity</h3>
+<ul>
+  <% Commodity.all.each do |commodity| %>
+    <li><%= link_to commodity.name, price_commodity_path(commodity) %></li>
+  <% end %>
+</ul>

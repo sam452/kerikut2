@@ -22,5 +22,5 @@ Scenario: Adding corn volume
 	
 	And I put in today's date in Date
 	
-	When I press "Submit"
+	When I click "Create Volume"
 	Then it should create a new volume in the database

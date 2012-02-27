@@ -5,8 +5,4 @@ class VolumeCommoditiesController < ApplicationController
     @commodity = Commodity.find(params[:id])
   end
   
-  def create
-    
-  end
-
 end

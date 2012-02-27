@@ -1,0 +1,38 @@
+<h1>Enter New Volume for <%= @commodity.name %></h1>
+
+<%= form_for (@volume), :url => volumes_path  do |f| %>
+    <%= f.hidden_field :commodity_id, :value =>@commodity.id %>
+    
+  <div class="field">
+    <%= f.label :volume_quality %><br />
+    <%= f.text_field :volume_quality %>
+  </div>
+  <div class="field">
+    <%= f.label :volume_type %><br />
+    <%= f.text_field :volume_type %>
+  </div>
+  <div class="field">
+    <%= f.label :region %><br />
+    <%= f.text_field :region %>
+  </div>
+  <div class="field">
+    <%= f.label :district %><br />
+    <%= f.text_field :district %>
+  </div>
+  <div class="field">
+    <%= f.label :ward %><br />
+    <%= f.text_field :ward %>
+  </div>
+  <div class="field">
+    <%= f.label :town %><br />
+    <%= f.text_field :town %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="actions">
+     
+     <%= f.submit "Submit" %>
+  </div>
+<% end %>

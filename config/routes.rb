@@ -13,6 +13,7 @@ Keriakut::Application.routes.draw do
   resources :volumes
   resource :create, :controller => :create
   get '/prices/new/:id', :to => 'price_commodities#new', :as => 'price_commodity'
+  get '/volumes/new/:id', :to => 'volume_commodities#new', :as => 'volume_commodity'
  # get '/prices/show/:commodity_id', :to => 'price_commodities#show', :as => 'price_commodities_show'
 
 

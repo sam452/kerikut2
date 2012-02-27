@@ -9,18 +9,16 @@ Scenario: Adding corn volume
 	
 	When I go to the new volume commodities page
 	
-	And I follow "Corn"
-
-	And I fill in "poor" with "volume_quality"
-	And I fill in  "private" in "volume_type"
+	And I click on "Corn"
 	
-	And I fill in "North" in "region"
-	And I fill in "myDistrict" in "district"
+	And I fill in "North" in volume_region
+	And I fill in "myDistrict" in volume_district
 
-	And I fill in "myWard" in "ward"
-	And I fill in "myTown" in "town"
-
-	And I fill in "dollar" in "receipt_unit"
+	Then I fill in "poor" in volume_quality
+	And I fill in "private" in "volume_volume_type"
+	
+	And I fill in "myWard" in "volume_ward"
+	And I fill in "myTown" in "volume_town"
 	
 	And I put in today's date in Date
 	

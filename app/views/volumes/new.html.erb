@@ -3,6 +3,6 @@
 <h3>Select a commodity</h3>
 <ul>
   <% Commodity.all.each do |commodity| %>
-    <li><%= link_to commodity.name, price_commodity_path(commodity) %></li>
+    <li><%= link_to commodity.name, volume_commodity_path(commodity) %></li>
   <% end %>
 </ul>

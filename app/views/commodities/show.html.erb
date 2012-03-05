@@ -1,18 +1,20 @@
 <h1>Commodities#show</h1>
 <p>Find me in app/views/commodities/show.html.erb</p>
 
-<%= @price.inspect %>
-
 <h3>Prices for <%= @commodity.name %></h3>
-    <p>price_quality = good </p>
-    <p>Price Type = government </p>
-        
-    <p>Farm gate high (<%= @commodity.farm_gate_unit %>) = <%= @price.farm_gate_high %></p>  
-    <p>Farm gate low (<%= @commodity.farm_gate_unit %>) = <%= @price.farm_gate_low %></p>     
-    <p>Delivered high (<%= @commodity.delivered_unit %>) = 9</p>   
-    <p>Delivered low (<%= @commodity.delivered_unit %>) = 7</p>
-    <p>Wholesale high (<%= @commodity.wholesale_unit %>) = 14</p>   
-    <p>Wholesale low (<%= @commodity.wholesale_unit %>) = 13</p>
-    <p>Retail high (<%= @commodity.retail_unit %>) = 19</p>   
-    <p>Retail low (<%= @commodity.retail_unit %>) = 17</p>
-  	<p>Date: "01/01/1990"</p>
+
+<% @commodity.prices.each do |price| %>
+  <p>price_quality = good </p>
+  <p>Price Type = government </p>
+
+  <p>Farm gate high (<%= price.farm_gate_unit %>) = <%= price.farm_gate_high %></p>  
+  <p>Farm gate low (<%= price.farm_gate_unit %>) = <%= price.farm_gate_low %></p>     
+  <p>Delivered high (<%= price.delivered_unit %>) = 9</p>   
+  <p>Delivered low (<%= price.delivered_unit %>) = 7</p>
+  <p>Wholesale high (<%= price.wholesale_unit %>) = 14</p>   
+  <p>Wholesale low (<%= price.wholesale_unit %>) = 13</p>
+  <p>Retail high (<%= price.retail_unit %>) = 19</p>   
+  <p>Retail low (<%= price.retail_unit %>) = 17</p>
+  <p>Date: "01/01/1990"</p>
+<% end %>
+

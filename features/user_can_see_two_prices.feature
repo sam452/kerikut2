@@ -1,3 +1,4 @@
+@focus
 Feature: As a user, I want to see all prices for corn so that I can see the trend and
    and make intelligent decisions on when to sell.
    

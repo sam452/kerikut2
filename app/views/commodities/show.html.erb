@@ -1,12 +1,14 @@
 <h1>Commodities#show</h1>
 <p>Find me in app/views/commodities/show.html.erb</p>
 
+<%= @price.inspect %>
+
 <h3>Prices for <%= @commodity.name %></h3>
     <p>price_quality = good </p>
     <p>Price Type = government </p>
         
-    <p>Farm gate high (<%= @commodity.farm_gate_unit %>) = 120</p>    
-    <p>Farm gate low (<%= @commodity.farm_gate_unit %>) = 10</p>     
+    <p>Farm gate high (<%= @commodity.farm_gate_unit %>) = <%= @price.farm_gate_high %></p>  
+    <p>Farm gate low (<%= @commodity.farm_gate_unit %>) = <%= @price.farm_gate_low %></p>     
     <p>Delivered high (<%= @commodity.delivered_unit %>) = 9</p>   
     <p>Delivered low (<%= @commodity.delivered_unit %>) = 7</p>
     <p>Wholesale high (<%= @commodity.wholesale_unit %>) = 14</p>   

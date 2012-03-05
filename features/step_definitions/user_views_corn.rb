@@ -7,6 +7,7 @@ end
 
 When /^I go to the home\s?page$/ do
  visit("/")
+ save_and_open_page
 end
 
 

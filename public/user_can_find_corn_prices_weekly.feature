@@ -4,7 +4,7 @@ I can make intelligent decisions about selling my corn.
 
 Scenario: Viewing corn prices
 
-  Given a price for corn has already been entered
+  Given there are prices entered
 	
 	When I go to the home page
 	

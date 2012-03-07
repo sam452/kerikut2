@@ -3,13 +3,13 @@ Keriakut::Application.routes.draw do
 
   get "volumes/new"
 
-  get "commodities/show"
+  #get "commodities/show"
 
   #root :to => "home#index"
   root :to => "prices#index"
 
   resources :prices
-  resources :commodities, :only => :show
+  resources :commodities #, :only => :show, :index
   resources :volumes
   resource :create, :controller => :create
   get '/prices/new/:id', :to => 'price_commodities#new', :as => 'price_commodity'

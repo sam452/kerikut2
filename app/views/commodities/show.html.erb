@@ -3,18 +3,6 @@
 
 <h3>Prices for <%= @commodity.name %></h3>
 
-<% @commodity.prices.each do |price| %>
-  <p>price_quality = good </p>
-  <p>Price Type = government </p>
+<% @commodity.prices %>
 
-  <p>Farm gate high (<%= price.farm_gate_unit %>) = <%= price.farm_gate_high %></p>  
-  <p>Farm gate low (<%= price.farm_gate_unit %>) = <%= price.farm_gate_low %></p>     
-  <p>Delivered high (<%= price.delivered_unit %>) = 9</p>   
-  <p>Delivered low (<%= price.delivered_unit %>) = 7</p>
-  <p>Wholesale high (<%= price.wholesale_unit %>) = 14</p>   
-  <p>Wholesale low (<%= price.wholesale_unit %>) = 13</p>
-  <p>Retail high (<%= price.retail_unit %>) = 19</p>   
-  <p>Retail low (<%= price.retail_unit %>) = 17</p>
-  <p>Date: "01/01/1990"</p>
-<% end %>
 

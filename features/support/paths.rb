@@ -32,6 +32,9 @@ module NavigationHelpers
 	when /the volume commodities page/
       'volume_commodities/show/'
       
+	when /the commodity trend page/
+	  'commodities/show/'
+	
 	#when /the price page/
     #  '/prices/show/'
 

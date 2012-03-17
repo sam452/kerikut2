@@ -3,6 +3,7 @@
 
 <h3>Prices for <%= @commodity.name %></h3>
 
-<% @commodity.prices %>
+<%= @commodity.prices %>
 
 
+<%= link_to( "Show all prices", commodities_path ) %>

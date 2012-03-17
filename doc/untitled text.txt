@@ -1,0 +1,70 @@
+volumes_new GET    /volumes/new(.:format)          {:controller=>"volumes", :action=>"new"}
+            root        /                               {:controller=>"prices", :action=>"index"}
+          prices GET    /prices(.:format)               {:action=>"index", :controller=>"prices"}
+                 POST   /prices(.:format)               {:action=>"create", :controller=>"prices"}
+       new_price GET    /prices/new(.:format)           {:action=>"new", :controller=>"prices"}
+      edit_price GET    /prices/:id/edit(.:format)      {:action=>"edit", :controller=>"prices"}
+           price GET    /prices/:id(.:format)           {:action=>"show", :controller=>"prices"}
+                 PUT    /prices/:id(.:format)           {:action=>"update", :controller=>"prices"}
+                 DELETE /prices/:id(.:format)           {:action=>"destroy", :controller=>"prices"}
+     commodities GET    /commodities(.:format)          {:action=>"index", :controller=>"commodities"}
+                 POST   /commodities(.:format)          {:action=>"create", :controller=>"commodities"}
+   new_commodity GET    /commodities/new(.:format)      {:action=>"new", :controller=>"commodities"}
+  edit_commodity GET    /commodities/:id/edit(.:format) {:action=>"edit", :controller=>"commodities"}
+       commodity GET    /commodities/:id(.:format)      {:action=>"show", :controller=>"commodities"}
+                 PUT    /commodities/:id(.:format)      {:action=>"update", :controller=>"commodities"}
+                 DELETE /commodities/:id(.:format)      {:action=>"destroy", :controller=>"commodities"}
+         volumes GET    /volumes(.:format)              {:action=>"index", :controller=>"volumes"}
+                 POST   /volumes(.:format)              {:action=>"create", :controller=>"volumes"}
+      new_volume GET    /volumes/new(.:format)          {:action=>"new", :controller=>"volumes"}
+     edit_volume GET    /volumes/:id/edit(.:format)     {:action=>"edit", :controller=>"volumes"}
+          volume GET    /volumes/:id(.:format)          {:action=>"show", :controller=>"volumes"}
+                 PUT    /volumes/:id(.:format)          {:action=>"update", :controller=>"volumes"}
+                 DELETE /volumes/:id(.:format)          {:action=>"destroy", :controller=>"volumes"}
+          create POST   /create(.:format)               {:action=>"create", :controller=>"create"}
+      new_create GET    /create/new(.:format)           {:action=>"new", :controller=>"create"}
+     edit_create GET    /create/edit(.:format)          {:action=>"edit", :controller=>"create"}
+                 GET    /create(.:format)               {:action=>"show", :controller=>"create"}
+                 PUT    /create(.:format)               {:action=>"update", :controller=>"create"}
+                 DELETE /create(.:format)               {:action=>"destroy", :controller=>"create"}
+ price_commodity GET    /prices/new/:id(.:format)       {:controller=>"price_commodities", :action=>"new"}
+volume_commodity GET    /volumes/new/:id(.:format)      {:controller=>"volume_commodities", :action=>"new"}
+
+
+
+Then /^I should be on the new volumes page$/ do
+  visit(volume_commodity_path)
+end
+
+class CommoditiesController < ApplicationController
+  def show
+    @commodity = Commodity.find(params[:id])
+    @price = Price.find_by_commodity_id(params[:all])
+  end
+  
+  view/commodities/show/
+      <p>Farm gate high (<%= @commodity.farm_gate_unit %>) = <%= @price.farm_gate_high %></p>    
+
+
+   Given the following 2 records:
+   | quality | farm_gate_high | date |
+   | good    | 121            | 01/01/1990 |
+   | good    | 122            | 01/02/1990 |
+   
+def palindrom?(string)
+  mytext = string.downcase.gsub(/\W/, '')
+  puts "palindrome!" if mytext.reverse == mytext
+end
+
+a.downcase.scan(/\w+/)
+
+group_by
+Comparable?
+
+def count_words(string)
+  myhash = Hash.new(0)
+  string.downcase.scan(/(\b\w+\b)/) { |myword| myhash[myword] += 1}
+  myhash
+end
+
+

@@ -13,17 +13,17 @@ Scenario: Seeing the trend in corn prices
    
    Then I go to the commodity trend page
    Then show   
-   And I should see "12.5" in Farm gate high (crate)
-   And I should see "10.5" in Farm gate low (crate)
-   And I should see "9.5" in Delivered high (bushel)
-   And I should see "7.5" in Delievered low (bushel)
-   And I should see "14.5" in Wholesale high (ton)
-   And I should see "13.5" in Wholesale low (ton)
-   And I should see "19.5" in Retail high (gallon)
-   And I should see "17.5" in Retail low (gallon)
+   And I should see "14" in Farm gate high (crate)
+   And I should see "12" in Farm gate low (crate)
+   And I should see "11" in Delivered high (bushel)
+   And I should see "9" in Delievered low (bushel)
+   And I should see "16" in Wholesale high (ton)
+   And I should see "17" in Wholesale low (ton)
+   And I should see "21" in Retail high (gallon)
+   And I should see "19" in Retail low (gallon)
    
    Then I click on "Show all prices"
-   Then I should go to the commodity price page
+   Then I should go to the commodity prices page
    
     And I should see "good" in "price_quality"
 	And I should see "government" in Price Type

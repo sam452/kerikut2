@@ -18,4 +18,4 @@ gem "bootstrap-sass"
 gem "rails-footnotes", ">= 3.7", :group => :development
 gem "pg", ">=0.12.2"
 gem "pry-rails", :group => [:development, :test]
-gem "twitter-bootstrap-rails", "~> 2.0rc0"
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
